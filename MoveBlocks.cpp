@@ -1,11 +1,8 @@
-/* CSCI 200: Final Project
+/* CSCI 200: SFML-TETRIS-GAME
  *
  * Author: Jacey Jonson
- * Resources used (Office Hours, Tutoring, Other Students, etc & in what capacity):
- *     // list here any outside assistance you used/received while following the
- *     // CS@Mines Collaboration Policy and the Mines Academic Code of Honor
  *
- * A game modeled after the popular game tetris
+ * A game modeled after the popular game tetris using SFML
  */
 
 #include "MoveBlocks.h"

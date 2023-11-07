@@ -1,11 +1,8 @@
-/* CSCI 200: Final Project
+/* CSCI 200: SFML-TETRIS-GAME
  *
  * Author: Jacey Jonson
- * Resources used (Office Hours, Tutoring, Other Students, etc & in what capacity):
- *     // list here any outside assistance you used/received while following the
- *     // CS@Mines Collaboration Policy and the Mines Academic Code of Honor
  *
- * A game modeled after the popular game tetris
+ * A game modeled after the popular game tetris using SFML 
  */
 
 #include <SFML/Graphics.hpp>
@@ -45,15 +42,9 @@ const int STARTING_Y = BUFFERY;
 int main() {
     // create a window
     RenderWindow window( VideoMode(640, 640), "SFML Test" );
-    //implements constants to other classes
+    
+    //implements constants to other classes 
     setMoveBlocksConstants(BOX_SIZE, WIDTH, HEIGHT, BUFFERX, BUFFERY, STARTING_X, STARTING_Y);
-    /////////////////////////////////////
-    // BEGIN ANY FILE LOADING
-
-    // perform any file processing once before draw loop begins
-
-    //  END  ANY FILE LOADING
-    /////////////////////////////////////
 
     // create an event object once to store future events
     Event event;
@@ -70,10 +61,11 @@ int main() {
     bool keepMoving = true;
     ifstream fileIn;
     allBlocks = readFile(fileIn, colors);
+
     //get the first 
     getCurrentBlock(newBlock(rotations, allBlocks), currBlock, STARTING_X, STARTING_Y);
     setRotations(currBlock);
-    //use this one for testing specific blocks
+
     // while the window is open
     while( window.isOpen() ) {
         // clear any existing contents
@@ -90,6 +82,7 @@ int main() {
         // display the current contents of the window
         window.display();
         
+        //checks if the block should move down
         if(clock.getElapsedTime().asSeconds() > speed){
         for(unsigned int i = 0; i < currBlock.size(); i++){
             currBlock.at(i)->setY(currBlock.at(i)->getY() + BOX_SIZE);
